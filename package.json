@@ -1,4 +1,14 @@
 {
     "name": "behna",
-    "version": "0.0.1"
-}
+    "version": "0.0.1",
+    "description": "Removes all spaces from a string",
+    "license": "MIT",
+    "repository": "raitalharehman/behnaNPM",
+    "main": "index.js",
+    "keywords": [
+      "behna",
+      "npm",
+      "package",
+      "raitalharehman"
+    ]
+  }
