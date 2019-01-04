@@ -1,9 +1,9 @@
-module.exports = function behna(string) {
+const behna =(string) => {
     if (typeof string !== "string") throw new TypeError("Behna wants a string!");
     return string.replace(/\s/g, "");
   };
  
-module.exports = function getSize (object) {
+const getSize = (object)=> {
     var objectList = [];
     var stack = [ object ];
     var bytes = 0;
@@ -35,3 +35,7 @@ module.exports = function getSize (object) {
     }
     return bytes;
   };
+  export {
+      behna,
+      getSize
+  }
