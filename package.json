@@ -1,13 +1,16 @@
 {
     "name": "behna",
-    "version": "0.0.6",
-    "description": "Removes all spaces from a string",
+    "version": "1.0.0",
+    "description": "Npm Package for multiple JS functions",
     "license": "MIT",
-    "repository": "raitalharehman/behnaNPM",
+    "repository": "raitalharehman/behna",
     "main": "index.js",
     "keywords": [
       "behna",
       "npm",
+      "getSize",
+      "ellipsis",
+      "existInThisRadius",
       "package",
       "raitalharehman"
     ]
