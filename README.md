@@ -1,4 +1,4 @@
-# behnaNPM
+# behna
 This package is about some cool funtions like
 ## Funtions
 -  [Ellipsis](#About)
