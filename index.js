@@ -41,7 +41,7 @@ const getSize = (object) => {
     }
     return bytes;
 };
-export {
+module.exports = {
     getSize,
     existInThisRadius,
     Ellipsis
