@@ -32,6 +32,8 @@ km is Radius Size in Kilimeters
 <Ellipsis title="Ms Water Internship" limit="15" />
 ```
 
+[![Edit Ellipsis](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/mo94rpy0op?fontsize=14)
+
 ### License
 
 Behna is [MIT licensed](./LICENSE).
