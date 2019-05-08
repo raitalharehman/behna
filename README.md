@@ -4,6 +4,7 @@ This package is about some cool funtions like
 -  [Ellipsis](#About)
 -  [existInThisRadius](#About)
 -  [getSize](#About)
+-  [debounce](#debounce)
 
 ## Installation 
 ```sh
