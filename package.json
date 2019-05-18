@@ -6,7 +6,8 @@
   "repository": "raitalharehman/behna",
   "main": "index.js",
   "scripts": {
-    "test": "eslint --ignore-path .gitignore .",
+    "test": "CI=true eslint --ignore-path .gitignore .",
+    "testlocal": "eslint --ignore-path .gitignore .",
     "test:fix": "eslint --fix .",
     "pub": "npm publish",
     "fire": "git push"
