@@ -1,6 +1,7 @@
 # behna
 This package is about some cool funtions like
 
+[![Build Status](https://travis-ci.org/raitalharehman/behna.svg?branch=master)](https://travis-ci.org/raitalharehman/behna)
 [![npm version](https://badge.fury.io/js/behna.svg)](https://badge.fury.io/js/behna)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
