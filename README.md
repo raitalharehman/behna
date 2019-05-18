@@ -20,6 +20,16 @@ import {getSize, existInThisRadius, Ellipsis} from 'behna';
 console.log("getSize =",getSize(obj));
 console.log("existInThisRadius =",existInThisRadius({ lat: 31.449865899999995, lng: 74.2968439 }, { lat: 31.5204, lng: 74.3587 }, 10));
 console.log("Ellipsis =",<Ellipsis title="Ms Water Internship" limit="15" />);
+let debounceCall = debounce(
+  function() {
+    alert("i am runnig");
+  },
+  1000,
+  false
+);
+  <button onClick={() => debounceCall()}>debounce</button>
+      <div>keep pressing button it will triger after you top pressing</div>
+    
 ```
 
 ## About
