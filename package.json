@@ -22,7 +22,7 @@
     "raitalharehman",
     "debounce"
   ],
-  "devDependencies": {
+  "dependencies": {
     "eslint": "^5.16.0",
     "eslint-config-strongloop": "^2.1.0"
   }
