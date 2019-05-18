@@ -10,6 +10,11 @@ const Ellipsis = (props) => {
     return ((props.title).length > props.limit) ? (((props.title).substring(0, props.limit)) + '..') : props.title
 }
 
+function addBytes(add) {
+    var bytes = null;
+    return bytes += add;
+}
+
 function objSize(objectList, stack, value) {
     objectList.push(value);
 
@@ -27,13 +32,13 @@ const getSize = (object) => {
         var value = stack.pop();
 
         if (typeof value === 'boolean')
-            bytes += 4;
+            bytes = addBytes(4);
 
         else if (typeof value === 'string')
-            bytes += value.length * 2;
+            bytes = addBytes(value.length * 2);
 
         else if (typeof value === 'number')
-            bytes += 8;
+            bytes = addBytes(8);
 
         else if (
             typeof value === 'object'
