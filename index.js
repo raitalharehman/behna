@@ -23,8 +23,7 @@ function objSize(objectList, stack, value) {
     }
 }
 
-function nonObjSize(value) {
-    var bytes = null;
+function nonObjSize(bytes, value) {
     if (typeof value === 'boolean')
         bytes = addBytes(4);
 
@@ -34,7 +33,7 @@ function nonObjSize(value) {
     else if (typeof value === 'number')
         bytes = addBytes(8);
 
-    return bytes;
+    return bytes
 }
 
 
@@ -53,7 +52,7 @@ const getSize = (object) => {
             objSize(objectList, stack, value);
 
         else
-            bytes = nonObjSize(value);
+            bytes = nonObjSize(bytes, value);
     }
     return bytes;
 };
