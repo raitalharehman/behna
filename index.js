@@ -31,11 +31,18 @@ const getSize = (object) => {
     while (stack.length) {
         var value = stack.pop();
 
-        if (typeof value === 'boolean')
-            bytes = addBytes(4);
+        if (typeof value != 'object'
+            && objectList.indexOf(value) === -1) {
+                
+            if (typeof value === 'boolean')
+                bytes = addBytes(4);
 
-        else if (typeof value === 'number')
-            bytes = addBytes(8);
+            else if (typeof value === 'string')
+                bytes = addBytes(value.length * 2);
+
+            else if (typeof value === 'number')
+                bytes = addBytes(8);
+        }
 
         else if (
             typeof value === 'object'
