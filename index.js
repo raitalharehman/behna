@@ -23,6 +23,21 @@ function objSize(objectList, stack, value) {
     }
 }
 
+function nonObjSize(value) {
+    var bytes = null;
+    if (typeof value === 'boolean')
+        bytes = addBytes(4);
+
+    else if (typeof value === 'string')
+        bytes = addBytes(value.length * 2);
+
+    else if (typeof value === 'number')
+        bytes = addBytes(8);
+
+    return bytes;
+}
+
+
 const getSize = (object) => {
     var objectList = [];
     var stack = [object];
@@ -31,24 +46,14 @@ const getSize = (object) => {
     while (stack.length) {
         var value = stack.pop();
 
-        if (typeof value != 'object'
-            && objectList.indexOf(value) === -1) {
-                
-            if (typeof value === 'boolean')
-                bytes = addBytes(4);
-
-            else if (typeof value === 'string')
-                bytes = addBytes(value.length * 2);
-
-            else if (typeof value === 'number')
-                bytes = addBytes(8);
-        }
-
-        else if (
+        if (
             typeof value === 'object'
             && objectList.indexOf(value) === -1
         )
             objSize(objectList, stack, value);
+
+        else
+            bytes = nonObjSize(value);
     }
     return bytes;
 };
