@@ -10,6 +10,14 @@ const Ellipsis = (props) => {
     return ((props.title).length > props.limit) ? (((props.title).substring(0, props.limit)) + '..') : props.title
 }
 
+function objSize(objectList, stack, value) {
+    objectList.push(value);
+
+    for (var i in value) {
+        stack.push(value[i]);
+    }
+}
+
 const getSize = (object) => {
     var objectList = [];
     var stack = [object];
@@ -18,26 +26,20 @@ const getSize = (object) => {
     while (stack.length) {
         var value = stack.pop();
 
-        if (typeof value === 'boolean') {
+        if (typeof value === 'boolean')
             bytes += 4;
-        }
-        else if (typeof value === 'string') {
+
+        else if (typeof value === 'string')
             bytes += value.length * 2;
-        }
-        else if (typeof value === 'number') {
+
+        else if (typeof value === 'number')
             bytes += 8;
-        }
-        else if
-            (
+
+        else if (
             typeof value === 'object'
             && objectList.indexOf(value) === -1
-        ) {
-            objectList.push(value);
-
-            for (var i in value) {
-                stack.push(value[i]);
-            }
-        }
+        )
+            objSize(objectList, stack, value);
     }
     return bytes;
 };
@@ -45,17 +47,17 @@ const getSize = (object) => {
 const debounce = (func, wait, immediate) => {
     var timeout;
     return function () {
-      var context = this, args = arguments;
-      var later = function () {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
+        var context = this, args = arguments;
+        var later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
     };
-  };
+};
 
 module.exports = {
     debounce,
