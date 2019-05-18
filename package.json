@@ -6,6 +6,8 @@
   "repository": "raitalharehman/behna",
   "main": "index.js",
   "scripts": {
+    "test": "eslint --ignore-path .gitignore .",
+    "test:fix": "eslint --fix .",
     "pub": "npm publish",
     "fire": "git push"
   },
@@ -18,5 +20,9 @@
     "package",
     "raitalharehman",
     "debounce"
-  ]
+  ],
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-strongloop": "^2.1.0"
+  }
 }

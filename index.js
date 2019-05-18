@@ -1,19 +1,22 @@
+'use strict';
 const existInThisRadius = (checkPoint, centerPoint, km) => {
     var ky = 40000 / 360;
     var kx = Math.cos(Math.PI * centerPoint.lat / 180.0) * ky;
     var dx = Math.abs(centerPoint.lng - checkPoint.lng) * kx;
     var dy = Math.abs(centerPoint.lat - checkPoint.lat) * ky;
     return Math.sqrt(dx * dx + dy * dy) <= km;
-}
+};
 
 const Ellipsis = (props) => {
-    return ((props.title).length > props.limit) ? (((props.title).substring(0, props.limit)) + '..') : props.title
-}
+    return ((props.title).length > props.limit) ?
+        (((props.title).substring(0, props.limit)) + '..') : props.title;
+};
 
 function addBytes(add) {
     var bytes = null;
-    return bytes += add;
-}
+    bytes += add;
+    return bytes;
+};
 
 function objSize(objectList, stack, value) {
     objectList.push(value);
@@ -21,7 +24,7 @@ function objSize(objectList, stack, value) {
     for (var i in value) {
         stack.push(value[i]);
     }
-}
+};
 
 function nonObjSize(bytes, value) {
     if (typeof value === 'boolean')
@@ -33,8 +36,8 @@ function nonObjSize(bytes, value) {
     else if (typeof value === 'number')
         bytes = addBytes(8);
 
-    return bytes
-}
+    return bytes;
+};
 
 
 const getSize = (object) => {
@@ -59,9 +62,10 @@ const getSize = (object) => {
 
 const debounce = (func, wait, immediate) => {
     var timeout;
-    return function () {
-        var context = this, args = arguments;
-        var later = function () {
+    return function() {
+        var context = this;
+        var args = arguments;
+        var later = function() {
             timeout = null;
             if (!immediate) func.apply(context, args);
         };
@@ -76,5 +80,5 @@ module.exports = {
     debounce,
     getSize,
     existInThisRadius,
-    Ellipsis
-}
+    Ellipsis,
+};
